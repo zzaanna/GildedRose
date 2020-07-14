@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace csharp
 {
@@ -14,8 +15,11 @@ namespace csharp
         {
             if (item.Quality >= 50)
                 return item.Quality;
-            
-            return item.Quality + 1;
+
+            if (item.SellIn>0)
+                return item.Quality + 1;
+
+            return item.Quality + 2;
         }
 
         private int NewQualityRegular(Item item)
@@ -54,10 +58,10 @@ namespace csharp
                 return item.Quality;
 
             if (item.SellIn <= 5)
-                return item.Quality + 3;
+                return Math.Min(item.Quality + 3,50);
             
             if (item.SellIn <= 10)
-                return item.Quality + 2;
+                return Math.Min(item.Quality + 2,50);
             
             return item.Quality + 1;
         }
