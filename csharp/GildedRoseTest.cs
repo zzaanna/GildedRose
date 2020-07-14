@@ -32,6 +32,22 @@ namespace csharp
         }
         
         [Test]
+        public void TestConjured()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured", SellIn = 8, Quality = 20 } };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.AreEqual(18, Items[0].Quality);
+            Assert.AreEqual(7, Items[0].SellIn);
+
+            Items[0].SellIn = 0;
+            app.UpdateQuality();
+            Assert.AreEqual(14, Items[0].Quality);
+            app.UpdateQuality();
+            Assert.AreEqual(10, Items[0].Quality);
+        }
+        
+        [Test]
         public void TestQualityNeverNegative()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Regular", SellIn = 8, Quality = 0 } };
