@@ -10,15 +10,15 @@ namespace csharp
             this.Items = Items;
         }
 
-        public int NewQualityBrie(Item item)
+        private int NewQualityBrie(Item item)
         {
             if (item.Quality >= 50)
                 return item.Quality;
             
             return item.Quality + 1;
         }
-        
-        public int NewQualityRegular(Item item)
+
+        private int NewQualityRegular(Item item)
         {
             if (item.Quality <= 0)
                 return item.Quality;
@@ -28,8 +28,8 @@ namespace csharp
 
             return item.Quality - 2;
         }
-        
-        public int NewQualityConjured(Item item)
+
+        private int NewQualityConjured(Item item)
         {
             if (item.Quality <= 0)
                 return item.Quality;
@@ -39,13 +39,13 @@ namespace csharp
 
             return item.Quality - 4;
         }
-        
-        public int NewQualitySulfuras(Item item)
+
+        private int NewQualitySulfuras(Item item)
         {
             return item.Quality;
         }
-        
-        public int NewQualityPass(Item item)
+
+        private int NewQualityBackstagePass(Item item)
         {
             if (item.SellIn <= 0)
                 return 0;
@@ -61,8 +61,8 @@ namespace csharp
             
             return item.Quality + 1;
         }
-        
-        public int NewQuality(Item item)
+
+        private int NewQuality(Item item)
         {
             if (item.Name == "Sulfuras, Hand of Ragnaros")
                 return item.Quality;
@@ -74,7 +74,7 @@ namespace csharp
                 return NewQualitySulfuras(item);
             
             if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-                return NewQualityPass(item);
+                return NewQualityBackstagePass(item);
             
             if (item.Name == "Conjured")
                 return NewQualityConjured(item);
@@ -84,7 +84,7 @@ namespace csharp
             
         }
 
-        public int NewSellIn(Item item)
+        private int NewSellIn(Item item)
         {
             if (item.Name == "Sulfuras, Hand of Ragnaros")
                 return item.SellIn;
