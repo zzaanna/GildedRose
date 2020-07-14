@@ -29,6 +29,17 @@ namespace csharp
             return item.Quality - 2;
         }
         
+        public int NewQualityConjured(Item item)
+        {
+            if (item.Quality <= 0)
+                return item.Quality;
+            
+            if (item.SellIn>0)
+                return item.Quality - 2;
+
+            return item.Quality - 4;
+        }
+        
         public int NewQualitySulfuras(Item item)
         {
             return item.Quality;
@@ -38,6 +49,9 @@ namespace csharp
         {
             if (item.SellIn <= 0)
                 return 0;
+
+            if (item.Quality >= 50)
+                return item.Quality;
 
             if (item.SellIn <= 5)
                 return item.Quality + 3;
@@ -61,6 +75,9 @@ namespace csharp
             
             if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
                 return NewQualityPass(item);
+            
+            if (item.Name == "Conjured")
+                return NewQualityConjured(item);
 
             // other regular items
             return NewQualityRegular(item);
