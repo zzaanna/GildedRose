@@ -77,10 +77,10 @@ namespace csharp
         [Test]
         public void TestSulfuras()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 8, Quality = 20 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 8, Quality = 80 } };
             GildedRose app = new GildedRose(Items);
             app.UpdateQuality();
-            Assert.AreEqual(20, Items[0].Quality);
+            Assert.AreEqual(80, Items[0].Quality);
             Assert.AreEqual(8, Items[0].SellIn);
         }
         
