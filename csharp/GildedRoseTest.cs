@@ -34,7 +34,7 @@ namespace csharp
         [Test]
         public void TestConjured()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Conjured", SellIn = 8, Quality = 20 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Something", SellIn = 8, Quality = 20 } };
             GildedRose app = new GildedRose(Items);
             app.UpdateQuality();
             Assert.AreEqual(18, Items[0].Quality);

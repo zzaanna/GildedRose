@@ -76,7 +76,7 @@ namespace csharp
             if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
                 return NewQualityBackstagePass(item);
             
-            if (item.Name == "Conjured")
+            if (item.Name.IndexOf("Conjured") == 0)
                 return NewQualityConjured(item);
 
             // other regular items
