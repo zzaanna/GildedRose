@@ -62,11 +62,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApprovalTest.cs" />
+    <Compile Include="BackstagePass.cs" />
+    <Compile Include="Brie.cs" />
+    <Compile Include="Conjured.cs" />
     <Compile Include="GildedRose.cs" />
     <Compile Include="GildedRoseTest.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Regular.cs" />
+    <Compile Include="Sulfuras.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
